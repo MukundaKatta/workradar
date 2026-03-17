@@ -1,0 +1,17 @@
+{
+  "name": "workradar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WorkRadar — AI-powered job discovery platform",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.0",
+    "typescript": "^5.7.0",
+    "@types/node": "^22.0.0"
+  }
+}
