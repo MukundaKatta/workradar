@@ -2,7 +2,7 @@
 
 **Live:** <https://mukundakatta.github.io/workradar/>
 
-AI-powered job discovery platform. Finds jobs like Spotify discovers music. workradar gives you a focused, inspectable implementation of that idea.
+AI-powered job discovery platform. Finds jobs like Spotify discovers music.
 
 ## Why workradar
 
