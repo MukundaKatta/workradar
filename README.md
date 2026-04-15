@@ -1,51 +1,65 @@
-# workradar — AI-powered job discovery platform. Finds jobs like Spotify discovers music
+# workradar
 
-**Live:** <https://mukundakatta.github.io/workradar/>
+> AI job discovery with Spotify-style 'for you' taste profile — tell it what you liked and disliked, it finds jobs you'd apply to.
 
-AI-powered job discovery platform. Finds jobs like Spotify discovers music.
+![status](https://img.shields.io/badge/status-active_planning-blue)
+![license](https://img.shields.io/badge/license-MIT-green)
+![backlog](https://img.shields.io/badge/backlog-see_DESIGN.md-orange)
 
-## Why workradar
+## What this is
 
-workradar exists to make this workflow practical. Ai-powered job discovery platform. finds jobs like spotify discovers music. It favours a small, inspectable surface over sprawling configuration.
+LinkedIn shows you jobs based on title keywords and seniority matching. That's a coarse filter that misses everything about fit — culture, tech stack, team size, remote policy, compensation band, growth trajectory. You end up scrolling through 90% noise.
 
-## Features
+**Read the full [DESIGN.md](./DESIGN.md)** for problem statement, user personas, architecture, and roadmap.
 
-- Development server with hot reload
-- Production build pipeline
+## Status
 
-## Tech Stack
+**Active planning / pre-alpha.** The design is scoped (see DESIGN.md). Code is minimal — this repo is the home for the first real implementation, not a placeholder.
 
-- **Runtime:** Node.js, TypeScript
+## MVP (v0.1) — what ships first
 
-## How It Works
+- Job feed UI with swipe/save/apply actions
+- LLM extraction of: company stage, stack, remote policy, comp band, team size
+- Taste profile = average of saved-job embeddings
+- Ranked feed = cosine similarity of new jobs against taste profile
 
-The codebase is organised into `apps/`, `packages/`.
+## Stack
 
-## Getting Started
+- Next.js 14 monorepo (apps/web, apps/api)
+- TypeScript throughout
+- Supabase (auth + Postgres)
+- Anthropic API for job-posting extraction (company size, stack, remote policy)
+- pgvector for taste-profile similarity
+
+See [DESIGN.md](./DESIGN.md#planned-stack) for complete stack rationale.
+
+## Quick start
 
 ```bash
-npm install
-npm run dev
+git clone https://github.com/MukundaKatta/workradar.git
+cd workradar
+# See DESIGN.md for full architecture
 ```
 
-## Usage
 
-```bash
-npm run dev
-# Application starts on its configured port
-```
+## Roadmap
 
-## Project Structure
+| Version | Focus |
+|---------|-------|
+| v0.1 | MVP — see checklist in [DESIGN.md](./DESIGN.md) |
+| v0.2 | 'Why this?' explainability panel |
+| v0.3 | Email digest and saved-search alerts |
 
-```
-workradar/
-├── .env.example
-├── LICENSE
-├── README.md
-├── apps/
-├── index.html
-├── package.json
-├── packages/
-├── pnpm-workspace.yaml
-├── turbo.json
-```
+Full roadmap in [DESIGN.md](./DESIGN.md#roadmap).
+
+## Contributing
+
+Open an issue if:
+- You'd use this tool and have a specific use case not covered
+- You spot a design flaw in DESIGN.md
+- You want to claim one of the v0.1 checklist items
+
+## See also
+
+- [My other projects](https://github.com/MukundaKatta)
+- [mukunda.dev](https://mukunda-ai.vercel.app)
